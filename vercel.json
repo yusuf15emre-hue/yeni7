@@ -2,5 +2,14 @@
   "rewrites": [
     { "source": "/admin", "destination": "/admin/index.html" },
     { "source": "/admin/", "destination": "/admin/index.html" }
+  ],
+  "headers": [
+    {
+      "source": "/_data/(.*)",
+      "headers": [
+        { "key": "Content-Type", "value": "application/json" },
+        { "key": "Cache-Control", "value": "no-cache" }
+      ]
+    }
   ]
 }

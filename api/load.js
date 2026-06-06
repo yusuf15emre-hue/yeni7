@@ -17,7 +17,7 @@ export default async function handler(req, res) {
 
   try {
     const token = process.env.GITHUB_TOKEN;
-    const repo = 'yusuf15emre-hue/yeni6';
+    const repo = 'yusuf15emre-hue/yeni7';
     const path = `_data/${file}.json`;
 
     const r = await fetch(`https://api.github.com/repos/${repo}/contents/${path}`, {

@@ -1,0 +1,34 @@
+[
+  {
+    "name": "Essential",
+    "currency": "£",
+    "price": "2,500",
+    "period": "per person · all-inclusive",
+    "featured": false,
+    "includes": [
+      "Hair transplant procedure (FUE/DHI)",
+      "Pre-operative consultation & planning",
+      "Private Mercedes airport transfer",
+      "Five-star hotel accommodation",
+      "All medications & aftercare kit",
+      "Dedicated English-speaking coordinator",
+      "12-month post-operative support"
+    ]
+  },
+  {
+    "name": "Premium VIP",
+    "currency": "£",
+    "price": "3,500",
+    "period": "per person · all-inclusive",
+    "featured": true,
+    "includes": [
+      "Everything in Essential",
+      "Premium clinic upgrade",
+      "Private suite accommodation",
+      "Personal driver throughout stay",
+      "Platelet-rich plasma (PRP) treatment",
+      "Priority aftercare hotline",
+      "18-month extended post-operative support"
+    ]
+  }
+]

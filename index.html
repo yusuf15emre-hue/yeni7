@@ -1,0 +1,1158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lucera Global — VIP Hair Restoration Worldwide to Istanbul</title>
+<meta name="description" content="Premium VIP hair transplant packages from anywhere in the world to Istanbul. World-class clinics, Mercedes transfers, five-star accommodation, 12-month aftercare. From £2,500.">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg: #f0f4f0;
+  --bg-2: #e8efe8;
+  --bg-dark: #1a2e1a;
+  --bg-dark-2: #243324;
+  --bg-dark-3: #2d3f2d;
+  --green: #2d6a4f;
+  --green-mid: #40916c;
+  --green-light: #74c69d;
+  --green-pale: rgba(45,106,79,0.08);
+  --gold: #b5884a;
+  --gold-light: #d4a55e;
+  --white: #ffffff;
+  --text: #1a2e1a;
+  --text-mid: #4a5e4a;
+  --muted: #7a907a;
+  --border: rgba(45,106,79,0.15);
+  --border-dark: rgba(116,198,157,0.15);
+}
+
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Outfit', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  overflow-x: hidden;
+}
+
+.display { font-family: 'Playfair Display', serif; }
+
+.eyebrow {
+  font-size: 0.65rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--green);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+.eyebrow::before {
+  content: '';
+  width: 24px;
+  height: 1px;
+  background: var(--green);
+  flex-shrink: 0;
+}
+.eyebrow.light { color: var(--green-light); }
+.eyebrow.light::before { background: var(--green-light); }
+
+/* NAV */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  padding: 1.1rem 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(240,244,240,0.95);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border);
+}
+
+.nav-logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.35rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  color: var(--text);
+  text-decoration: none;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2.5rem;
+  list-style: none;
+}
+.nav-links a {
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--green); }
+
+.btn-whatsapp {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #25D366;
+  color: white;
+  padding: 0.6rem 1.25rem;
+  border-radius: 4px;
+  font-size: 0.78rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+.btn-whatsapp:hover { opacity: 0.88; }
+.btn-whatsapp svg { width: 15px; height: 15px; fill: white; flex-shrink: 0; }
+
+.btn-primary {
+  background: var(--green);
+  color: white;
+  padding: 0.85rem 1.75rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s;
+  display: inline-block;
+}
+.btn-primary:hover { background: var(--green-mid); }
+
+.btn-outline {
+  background: transparent;
+  color: var(--green);
+  padding: 0.85rem 1.75rem;
+  font-size: 0.82rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 4px;
+  border: 1.5px solid var(--green);
+  cursor: pointer;
+  transition: all 0.2s;
+  display: inline-block;
+}
+.btn-outline:hover { background: var(--green); color: white; }
+
+.btn-outline-light {
+  background: transparent;
+  color: var(--green-light);
+  padding: 0.85rem 1.75rem;
+  font-size: 0.82rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 4px;
+  border: 1.5px solid var(--green-light);
+  cursor: pointer;
+  transition: all 0.2s;
+  display: inline-block;
+}
+.btn-outline-light:hover { background: var(--green-light); color: var(--bg-dark); }
+
+/* HERO */
+.hero {
+  min-height: 100vh;
+  background: var(--bg-dark);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding-top: 72px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 30% 60%, rgba(45,106,79,0.3) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.hero-left {
+  padding: 5rem 4rem 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+}
+
+.hero-right {
+  position: relative;
+  overflow: hidden;
+}
+.hero-right::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, var(--bg-dark) 0%, transparent 35%);
+  z-index: 1;
+  pointer-events: none;
+}
+.hero-img-placeholder {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, var(--bg-dark-2) 0%, var(--bg-dark-3) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(116,198,157,0.3);
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(116,198,157,0.1);
+  border: 1px solid rgba(116,198,157,0.2);
+  color: var(--green-light);
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  padding: 0.4rem 0.9rem;
+  border-radius: 100px;
+  margin-bottom: 1.75rem;
+  width: fit-content;
+}
+.hero-badge-dot {
+  width: 6px;
+  height: 6px;
+  background: var(--green-light);
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+.hero-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.8rem, 4.5vw, 4.2rem);
+  font-weight: 400;
+  line-height: 1.1;
+  color: var(--white);
+  margin-bottom: 1.5rem;
+}
+.hero-title em {
+  font-style: italic;
+  color: var(--green-light);
+}
+
+.hero-desc {
+  font-size: 0.95rem;
+  line-height: 1.75;
+  color: rgba(255,255,255,0.55);
+  max-width: 460px;
+  margin-bottom: 2.5rem;
+}
+
+.hero-btns {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 3.5rem;
+  flex-wrap: wrap;
+}
+
+.hero-stats {
+  display: flex;
+  gap: 2.5rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(116,198,157,0.15);
+}
+.stat-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.9rem;
+  color: var(--green-light);
+  line-height: 1;
+  margin-bottom: 0.25rem;
+}
+.stat-label {
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.35);
+}
+
+/* TRUST BAR */
+.trust-bar {
+  background: var(--white);
+  border-bottom: 1px solid var(--border);
+  padding: 1.1rem 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+  flex-wrap: wrap;
+}
+.trust-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-mid);
+  font-weight: 500;
+}
+.trust-item svg { color: var(--green); width: 15px; height: 15px; flex-shrink: 0; }
+
+/* SECTIONS */
+section { padding: 6rem 4rem; }
+
+.section-header { max-width: 580px; margin-bottom: 3.5rem; }
+.section-header h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 3vw, 2.6rem);
+  font-weight: 400;
+  line-height: 1.2;
+  margin-top: 1rem;
+}
+.section-header p {
+  font-size: 0.88rem;
+  line-height: 1.75;
+  color: var(--muted);
+  margin-top: 0.75rem;
+}
+
+/* HOW IT WORKS */
+.how-it-works { background: var(--white); }
+
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+.step-card {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 2.25rem;
+  position: relative;
+  transition: border-color 0.2s, transform 0.2s;
+}
+.step-card:hover { border-color: var(--green); transform: translateY(-3px); }
+.step-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 3.5rem;
+  color: rgba(45,106,79,0.12);
+  line-height: 1;
+  margin-bottom: 1.25rem;
+}
+.step-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.3rem;
+  color: var(--text);
+  margin-bottom: 0.75rem;
+}
+.step-desc { font-size: 0.86rem; line-height: 1.7; color: var(--muted); }
+
+/* RESULTS */
+.results { background: var(--bg-dark); }
+
+.results-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+.result-card {
+  background: var(--bg-dark-2);
+  border: 1px solid var(--border-dark);
+  border-radius: 8px;
+  overflow: hidden;
+  transition: border-color 0.2s;
+}
+.result-card:hover { border-color: rgba(116,198,157,0.4); }
+
+.result-images {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 190px;
+  position: relative;
+}
+.result-img-placeholder {
+  background: var(--bg-dark-3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(116,198,157,0.25);
+  font-size: 0.6rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+.result-img-placeholder.after { background: rgba(45,106,79,0.25); }
+.result-label {
+  position: absolute;
+  bottom: 0.6rem;
+  font-size: 0.58rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: white;
+  background: rgba(0,0,0,0.65);
+  padding: 0.2rem 0.45rem;
+  border-radius: 2px;
+}
+.result-label.before { left: 0.6rem; }
+.result-label.after { right: 0.6rem; }
+
+.result-info { padding: 1.1rem 1.25rem; }
+.result-detail { font-size: 0.78rem; color: rgba(255,255,255,0.45); line-height: 1.5; }
+.result-detail strong {
+  color: var(--green-light);
+  display: block;
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 0.2rem;
+}
+.results-note { text-align: center; margin-top: 2rem; font-size: 0.78rem; color: rgba(255,255,255,0.35); }
+.results-note a { color: var(--green-light); text-decoration: none; }
+
+/* PACKAGE */
+.package { background: var(--bg-2); }
+
+.packages-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+  align-items: start;
+}
+
+.package-card-wrap {
+  background: var(--bg-dark);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.2s;
+}
+.package-card-wrap:hover { transform: translateY(-4px); }
+.package-card-wrap.featured {
+  box-shadow: 0 0 0 2px var(--green-light);
+}
+.package-featured-badge {
+  background: var(--green-light);
+  color: var(--bg-dark);
+  font-size: 0.62rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 0.3rem;
+  font-weight: 700;
+}
+.package-top {
+  background: var(--green);
+  padding: 2.5rem;
+  text-align: center;
+}
+.package-from {
+  font-size: 0.68rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.65);
+  margin-bottom: 0.5rem;
+}
+.package-price {
+  font-family: 'Playfair Display', serif;
+  font-size: 4rem;
+  color: white;
+  line-height: 1;
+}
+.package-currency { font-size: 1.5rem; vertical-align: super; }
+.package-period { font-size: 0.78rem; color: rgba(255,255,255,0.6); margin-top: 0.4rem; }
+
+.package-body { padding: 2rem 2.25rem; }
+.package-includes { list-style: none; }
+.package-includes li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  font-size: 0.84rem;
+  color: rgba(255,255,255,0.65);
+  padding: 0.65rem 0;
+  border-bottom: 1px solid rgba(116,198,157,0.1);
+}
+.package-includes li:last-child { border-bottom: none; }
+.package-includes li::before { content: '✓'; color: var(--green-light); font-weight: 600; flex-shrink: 0; }
+.package-body .btn-primary { width: 100%; text-align: center; margin-top: 1.5rem; }
+
+.package-details h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  color: var(--text);
+  margin-bottom: 1.25rem;
+  line-height: 1.3;
+}
+.package-details p { font-size: 0.88rem; line-height: 1.8; color: var(--muted); margin-bottom: 2rem; }
+
+.package-features { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
+.feature-item { display: flex; flex-direction: column; gap: 0.2rem; }
+.feature-icon { font-size: 1.2rem; margin-bottom: 0.2rem; }
+.feature-title { font-size: 0.78rem; font-weight: 600; color: var(--text); }
+.feature-desc { font-size: 0.72rem; color: var(--muted); line-height: 1.5; }
+
+/* TESTIMONIALS */
+.testimonials { background: var(--white); }
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+.testimonial-card {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 2rem;
+  transition: border-color 0.2s;
+}
+.testimonial-card:hover { border-color: var(--green); }
+.testimonial-stars { color: var(--gold); font-size: 0.85rem; margin-bottom: 1rem; }
+.testimonial-text { font-size: 0.86rem; line-height: 1.75; color: var(--muted); margin-bottom: 1.5rem; font-style: italic; }
+.testimonial-author { display: flex; align-items: center; gap: 0.75rem; }
+.author-avatar {
+  width: 36px; height: 36px; border-radius: 50%;
+  background: var(--green-pale);
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Playfair Display', serif;
+  font-size: 0.9rem; color: var(--green); flex-shrink: 0;
+  border: 1px solid var(--border);
+}
+.author-name { font-size: 0.82rem; font-weight: 600; color: var(--text); }
+.author-location { font-size: 0.72rem; color: var(--muted); }
+
+/* FAQ */
+.faq { background: var(--bg-2); }
+.faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin-top: 2rem; }
+.faq-item {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1.5rem 1.75rem;
+  cursor: pointer;
+  transition: border-color 0.2s;
+}
+.faq-item:hover { border-color: var(--green); }
+.faq-q {
+  font-size: 0.88rem; font-weight: 600; color: var(--text);
+  margin-bottom: 0.65rem;
+  display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem;
+}
+.faq-q span { color: var(--green); font-size: 1.1rem; flex-shrink: 0; }
+.faq-a { font-size: 0.82rem; line-height: 1.7; color: var(--muted); }
+
+/* JOURNAL */
+.journal { background: var(--white); }
+.journal-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 2rem; }
+.journal-card {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+  text-decoration: none;
+  transition: border-color 0.2s, transform 0.2s;
+  display: block;
+}
+.journal-card:hover { border-color: var(--green); transform: translateY(-3px); }
+.journal-img {
+  height: 160px;
+  background: linear-gradient(135deg, var(--bg-dark) 0%, var(--bg-dark-2) 100%);
+  display: flex; align-items: center; justify-content: center;
+  color: rgba(116,198,157,0.3); font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase;
+}
+.journal-body { padding: 1.5rem; }
+.journal-tag {
+  font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase;
+  color: var(--green); margin-bottom: 0.6rem;
+}
+.journal-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem; color: var(--text); line-height: 1.35; margin-bottom: 0.6rem;
+}
+.journal-desc { font-size: 0.78rem; color: var(--muted); line-height: 1.6; }
+.journal-link { display: block; text-align: center; margin-top: 2.5rem; }
+
+/* CTA */
+.cta-section {
+  background: var(--bg-dark);
+  text-align: center;
+  padding: 6rem 4rem;
+  position: relative;
+  overflow: hidden;
+}
+.cta-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 50% 100%, rgba(45,106,79,0.3) 0%, transparent 60%);
+  pointer-events: none;
+}
+.cta-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 3.5vw, 2.8rem);
+  color: white;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+  position: relative;
+}
+.cta-subtitle { font-size: 0.95rem; color: rgba(255,255,255,0.5); margin-bottom: 2.5rem; max-width: 480px; margin-left: auto; margin-right: auto; line-height: 1.7; position: relative; }
+.cta-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; position: relative; }
+
+/* FOOTER */
+footer {
+  background: var(--bg-dark-2);
+  border-top: 1px solid var(--border-dark);
+  padding: 2.5rem 4rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 2rem;
+  align-items: center;
+}
+.footer-logo { font-family: 'Playfair Display', serif; font-size: 1.15rem; color: white; }
+.footer-tagline { font-size: 0.72rem; color: rgba(255,255,255,0.35); margin-top: 0.4rem; }
+.footer-social { display: flex; gap: 1rem; margin-top: 0.75rem; }
+.footer-social a { font-size: 0.72rem; color: rgba(255,255,255,0.4); text-decoration: none; letter-spacing: 0.05em; transition: color 0.2s; }
+.footer-social a:hover { color: var(--green-light); }
+.footer-links { display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap; }
+.footer-links a { font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255,255,255,0.4); text-decoration: none; transition: color 0.2s; }
+.footer-links a:hover { color: var(--green-light); }
+.footer-right { text-align: right; font-size: 0.72rem; color: rgba(255,255,255,0.35); line-height: 1.7; }
+
+/* WHATSAPP FLOAT */
+.whatsapp-float {
+  position: fixed; bottom: 2rem; right: 2rem; z-index: 99;
+  width: 54px; height: 54px; background: #25D366;
+  border-radius: 50%; display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 4px 20px rgba(37,211,102,0.4);
+  text-decoration: none; transition: transform 0.2s;
+}
+.whatsapp-float:hover { transform: scale(1.08); }
+.whatsapp-float svg { width: 26px; height: 26px; fill: white; }
+
+/* MOBILE */
+@media (max-width: 900px) {
+  nav { padding: 1rem 1.5rem; }
+  .nav-links { display: none; }
+  .hero { grid-template-columns: 1fr; }
+  .hero-right { display: none; }
+  .hero-left { padding: 4.5rem 1.5rem 3rem; }
+  section { padding: 4rem 1.5rem; }
+  .steps-grid, .results-grid, .testimonials-grid, .journal-grid, .packages-grid { grid-template-columns: 1fr; }
+  .faq-grid { grid-template-columns: 1fr; }
+  .package-inner { grid-template-columns: 1fr; }
+  footer { grid-template-columns: 1fr; text-align: center; }
+  .footer-right, .footer-social { text-align: center; justify-content: center; }
+  .footer-links { justify-content: center; }
+  .trust-bar { padding: 1rem 1.5rem; gap: 1.5rem; }
+  .cta-section { padding: 4rem 1.5rem; }
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(18px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.hero-left > * { animation: fadeUp 0.65s ease both; }
+.hero-badge { animation-delay: 0.05s; }
+.hero-title { animation-delay: 0.15s; }
+.hero-desc { animation-delay: 0.25s; }
+.hero-btns { animation-delay: 0.35s; }
+.hero-stats { animation-delay: 0.45s; }
+</style>
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="/" class="nav-logo display">LUCERA GLOBAL</a>
+  <ul class="nav-links">
+    <li><a href="#how-it-works">How It Works</a></li>
+    <li><a href="#results">Results</a></li>
+    <li><a href="#package">Packages</a></li>
+    <li><a href="#journal">Journal</a></li>
+    <li><a href="#faq">FAQ</a></li>
+  </ul>
+  <a href="https://wa.me/905000000000" class="btn-whatsapp" target="_blank">
+    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    Free Consultation
+  </a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-badge">
+      <span class="hero-badge-dot"></span>
+      VIP Hair Restoration
+    </div>
+    <h1 class="hero-title display">
+      Wherever<br>you are.<br>
+      <em>Istanbul.</em>
+    </h1>
+    <p class="hero-desc">
+      Premium hair transplant experiences for patients worldwide. World-class clinics in Istanbul, Mercedes transfers, five-star accommodation — and 12 months of aftercare included.
+    </p>
+    <div class="hero-btns">
+      <a href="https://wa.me/905000000000" class="btn-primary" target="_blank">WhatsApp Us Free</a>
+      <a href="#package" class="btn-outline-light">View Packages</a>
+    </div>
+    <div class="hero-stats">
+      <div>
+        <div class="stat-num display">VIP</div>
+        <div class="stat-label">End-to-End Service</div>
+      </div>
+      <div>
+        <div class="stat-num display">12mo</div>
+        <div class="stat-label">Aftercare Included</div>
+      </div>
+      <div>
+        <div class="stat-num display">£0</div>
+        <div class="stat-label">Consultation Fee</div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-img-placeholder">Hero Image</div>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="trust-item">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+    Certified Clinics
+  </div>
+  <div class="trust-item">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"/></svg>
+    Mercedes-Benz Transfers
+  </div>
+  <div class="trust-item">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+    Five-Star Accommodation
+  </div>
+  <div class="trust-item">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
+    12-Month Aftercare
+  </div>
+  <div class="trust-item">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+    Worldwide Patients
+  </div>
+</div>
+
+<!-- HOW IT WORKS -->
+<section class="how-it-works" id="how-it-works">
+  <div class="section-header">
+    <div class="eyebrow">The Process</div>
+    <h2 class="display">Everything handled.<br><em style="color:var(--green-mid)">From first call to final result.</em></h2>
+  </div>
+  <div class="steps-grid">
+    <div class="step-card">
+      <div class="step-num display">01</div>
+      <div class="step-title display">Free Consultation</div>
+      <p class="step-desc">Send us your photos via WhatsApp. Our clinical team will assess your hair loss, discuss realistic outcomes, and provide a personalised recommendation — at no cost.</p>
+    </div>
+    <div class="step-card">
+      <div class="step-num display">02</div>
+      <div class="step-title display">VIP Travel & Surgery</div>
+      <p class="step-desc">Private Mercedes transfer from your home to the airport. Five-star hotel on arrival. Surgery at a world-class accredited clinic with an experienced surgical team.</p>
+    </div>
+    <div class="step-card">
+      <div class="step-num display">03</div>
+      <div class="step-title display">12-Month Aftercare</div>
+      <p class="step-desc">Your dedicated coordinator stays with you for 12 months post-surgery. Regular check-ins, unlimited questions, and full support through every stage of your recovery.</p>
+    </div>
+  </div>
+</section>
+
+<!-- RESULTS -->
+<section class="results" id="results">
+  <div class="section-header">
+    <div class="eyebrow light">Real Results</div>
+    <h2 class="display" style="color:white;">Patient outcomes.<br><em style="color:var(--green-light)">Documented honestly.</em></h2>
+    <p style="color:rgba(255,255,255,0.4)">All results shown are from real patients. Photos have not been digitally altered.</p>
+  </div>
+  <div class="results-grid" id="results-grid">
+    <div class="result-card">
+      <div class="result-images">
+        <div class="result-img-placeholder">Before</div>
+        <div class="result-img-placeholder after">After</div>
+        <span class="result-label before">Before</span>
+        <span class="result-label after">12 Months</span>
+      </div>
+      <div class="result-info">
+        <div class="result-detail"><strong>Procedure</strong>3,200 grafts — FUE Sapphire</div>
+      </div>
+    </div>
+    <div class="result-card">
+      <div class="result-images">
+        <div class="result-img-placeholder">Before</div>
+        <div class="result-img-placeholder after">After</div>
+        <span class="result-label before">Before</span>
+        <span class="result-label after">10 Months</span>
+      </div>
+      <div class="result-info">
+        <div class="result-detail"><strong>Procedure</strong>2,800 grafts — DHI</div>
+      </div>
+    </div>
+    <div class="result-card">
+      <div class="result-images">
+        <div class="result-img-placeholder">Before</div>
+        <div class="result-img-placeholder after">After</div>
+        <span class="result-label before">Before</span>
+        <span class="result-label after">14 Months</span>
+      </div>
+      <div class="result-info">
+        <div class="result-detail"><strong>Procedure</strong>4,100 grafts — FUE Sapphire</div>
+      </div>
+    </div>
+  </div>
+  <p class="results-note">Photos added as patients grant permission. <a href="https://wa.me/905000000000">Ask us for case studies relevant to your hair loss →</a></p>
+</section>
+
+<!-- PACKAGE -->
+<section class="package" id="package">
+  <div class="section-header">
+    <div class="eyebrow">Pricing</div>
+    <h2 class="display">Our packages.<br><em style="color:var(--green-mid)">Everything included.</em></h2>
+  </div>
+  <div class="packages-grid" id="packages-grid">
+    <!-- Rendered by JS -->
+  </div>
+  <div style="display:none" class="package-inner">
+    <div class="package-card">
+      <div class="package-top">
+        <div class="package-from">All-Inclusive Package From</div>
+        <div class="package-price display" id="package-price"><span class="package-currency">£</span>2,500</div>
+        <div class="package-period">per person · all-inclusive</div>
+      </div>
+      <div class="package-body">
+        <ul class="package-includes" id="package-includes">
+          <li>Hair transplant procedure (FUE/DHI)</li>
+          <li>Pre-operative consultation & planning</li>
+          <li>Private Mercedes airport transfer</li>
+          <li>Five-star hotel accommodation</li>
+          <li>All medications & aftercare kit</li>
+          <li>Dedicated English-speaking coordinator</li>
+          <li>12-month post-operative support</li>
+        </ul>
+        <a href="https://wa.me/905000000000" class="btn-primary" target="_blank">Get a Quote on WhatsApp</a>
+      </div>
+    </div>
+    <div class="package-details">
+      <h3 class="display">Why the price difference with home?</h3>
+      <p>The same procedure costs £5,000–15,000 in the UK, and even more in the Gulf. Istanbul's lower operating costs — not lower standards — create the difference. Our partner clinics are internationally accredited and treat thousands of patients from around the world every year.</p>
+      <div class="package-features">
+        <div class="feature-item">
+          <div class="feature-icon">✈️</div>
+          <div class="feature-title">Door to Door</div>
+          <div class="feature-desc">From your home to the clinic and back</div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">🏥</div>
+          <div class="feature-title">Certified Clinics</div>
+          <div class="feature-desc">Internationally accredited surgical facilities</div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">🏨</div>
+          <div class="feature-title">5-Star Stay</div>
+          <div class="feature-desc">Hilton or equivalent for your full stay</div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">📅</div>
+          <div class="feature-title">12-Month Support</div>
+          <div class="feature-desc">With you through every stage of recovery</div>
+        </div>
+      </div>
+    </div>
+  </div><!-- end hidden package-inner -->
+</section>
+<section class="journal" id="journal">
+  <div class="section-header">
+    <div class="eyebrow">The Lucera Journal</div>
+    <h2 class="display">Insights & guides<br><em style="color:var(--green-mid)">for informed patients.</em></h2>
+    <p>Everything you need to know before making your decision — written honestly, without the sales pitch.</p>
+  </div>
+  <div class="journal-grid" id="journal-grid">
+    <a href="/blog" class="journal-card">
+      <div class="journal-img">Article Image</div>
+      <div class="journal-body">
+        <div class="journal-tag">Complete Guide</div>
+        <div class="journal-title display">Hair Transplant in Istanbul: Complete Guide for International Patients</div>
+        <div class="journal-desc">Everything you need to know before booking — costs, clinic standards, techniques, and what to expect.</div>
+      </div>
+    </a>
+    <a href="/blog" class="journal-card">
+      <div class="journal-img">Article Image</div>
+      <div class="journal-body">
+        <div class="journal-tag">Recovery</div>
+        <div class="journal-title display">Month by Month: What to Expect After Your Hair Transplant</div>
+        <div class="journal-desc">A realistic timeline covering shock loss, new growth, and when you'll see final results.</div>
+      </div>
+    </a>
+    <a href="/blog" class="journal-card">
+      <div class="journal-img">Article Image</div>
+      <div class="journal-body">
+        <div class="journal-tag">Planning</div>
+        <div class="journal-title display">FUE vs DHI: Which Technique Is Right for Your Hair Loss?</div>
+        <div class="journal-desc">The key differences explained — and how to know which approach suits your specific pattern.</div>
+      </div>
+    </a>
+  </div>
+  <div class="journal-link">
+    <a href="/blog" class="btn-outline">Read All Articles</a>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq" id="faq">
+  <div class="section-header">
+    <div class="eyebrow">Common Questions</div>
+    <h2 class="display">Questions we<br><em style="color:var(--green-mid)">hear most often.</em></h2>
+  </div>
+  <div class="faq-grid" id="faq-grid">
+    <div class="faq-item">
+      <div class="faq-q">Is it safe to have a hair transplant in Istanbul? <span>+</span></div>
+      <div class="faq-a">Yes — provided you choose an accredited clinic with a qualified surgical team. Our partner clinics operate to international standards and treat thousands of international patients every year.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">How long do I need to stay in Istanbul? <span>+</span></div>
+      <div class="faq-a">Most patients stay 3–4 nights in total. One night before the procedure and two to three nights after for the initial post-operative review before flying home.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">When will I see the final results? <span>+</span></div>
+      <div class="faq-a">Initial shedding of transplanted hairs occurs in weeks 2–4 — this is completely normal. New growth begins around month 3–4, with full results visible at 12–18 months.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">What if something goes wrong after I return home? <span>+</span></div>
+      <div class="faq-a">Your coordinator provides 12-month support including video consultations, direct contact, and clear protocols for any concerns that arise after you return home.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">How much time off work will I need? <span>+</span></div>
+      <div class="faq-a">Most patients take 5–7 days off work. You should avoid strenuous activity for 2–3 weeks, but desk work can typically resume within a week.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Can I see results from previous patients? <span>+</span></div>
+      <div class="faq-a">Yes. Message us on WhatsApp and we'll share documented results from patients with similar hair loss patterns to yours.</div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="cta-section">
+  <h2 class="cta-title display">Ready to take the first step?</h2>
+  <p class="cta-subtitle">Send us a few photos on WhatsApp. We'll tell you honestly whether you're a good candidate and what results are realistic for your case.</p>
+  <div class="cta-btns">
+    <a href="https://wa.me/905000000000" class="btn-whatsapp" target="_blank" style="padding:0.9rem 1.75rem;font-size:0.82rem;">
+      <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      Message on WhatsApp
+    </a>
+    <a href="mailto:info@luceraglobal.com" class="btn-outline-light">Send an Email</a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div>
+    <div class="footer-logo display">LUCERA GLOBAL</div>
+    <div class="footer-tagline">VIP Hair Restoration · Worldwide to Istanbul</div>
+    <div class="footer-social">
+      <a href="https://instagram.com/luceraglobal" target="_blank">Instagram</a>
+      <a href="https://tiktok.com/@luceraglobal" target="_blank">TikTok</a>
+    </div>
+  </div>
+  <div class="footer-links">
+    <a href="#how-it-works">How It Works</a>
+    <a href="#package">Packages</a>
+    <a href="#journal">Journal</a>
+    <a href="#faq">FAQ</a>
+  </div>
+  <div class="footer-right">
+    <div>info@luceraglobal.com</div>
+    <div style="margin-top:0.4rem">© 2025 Lucera Global</div>
+  </div>
+</footer>
+
+<!-- WHATSAPP FLOAT -->
+<a href="#" class="whatsapp-float" id="waFloat" target="_blank" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<script>
+// ── FETCH ALL DATA & RENDER ──
+async function loadData(file) {
+  try {
+    const r = await fetch('/_data/' + file + '.json?v=' + Date.now());
+    if (!r.ok) throw new Error();
+    return await r.json();
+  } catch(e) {
+    return null;
+  }
+}
+
+async function init() {
+  const [settings, packages, articles, results, faq] = await Promise.all([
+    loadData('settings'),
+    loadData('packages'),
+    loadData('articles'),
+    loadData('results'),
+    loadData('faq')
+  ]);
+
+  if (!settings) return;
+
+  // ── WhatsApp ──
+  const waUrl = 'https://wa.me/' + (settings.whatsapp || '').replace(/\D/g, '');
+  document.querySelectorAll('a[href*="wa.me"]').forEach(el => el.href = waUrl);
+  const waFloat = document.getElementById('waFloat');
+  if (waFloat) waFloat.href = waUrl;
+
+  // ── Email ──
+  document.querySelectorAll('a[href*="mailto"]').forEach(el => {
+    el.href = 'mailto:' + settings.email;
+    if (el.textContent.includes('@')) el.textContent = settings.email;
+  });
+  document.querySelectorAll('.footer-email').forEach(el => el.textContent = settings.email);
+
+  // ── Social ──
+  document.querySelectorAll('a[href*="instagram"]').forEach(el => el.href = settings.instagram);
+  document.querySelectorAll('a[href*="tiktok"]').forEach(el => el.href = settings.tiktok);
+
+  // ── Hero Image ──
+  const heroRight = document.querySelector('.hero-right');
+  if (heroRight) {
+    if (settings.hero_image) {
+      heroRight.innerHTML = '<img src="' + settings.hero_image + '" style="width:100%;height:100%;object-fit:cover;" alt="Hero">';
+    } else {
+      heroRight.innerHTML = '<div class="hero-img-placeholder">Hero Image</div>';
+    }
+  }
+
+  // ── Packages ──
+  const packagesEl = document.getElementById('packages-grid');
+  if (packagesEl && packages && packages.length) {
+    // packages.json is either a plain array OR {packages: [...]}
+    const pkgList = Array.isArray(packages) ? packages : (packages.packages || []);
+    packagesEl.innerHTML = pkgList.map(p => `
+      <div class="package-card-wrap${p.featured ? ' featured' : ''}">
+        ${p.featured ? '<div class="package-featured-badge">Most Popular</div>' : ''}
+        <div class="package-top">
+          <div class="package-from">${p.name}</div>
+          <div class="package-price display"><span class="package-currency">${p.currency}</span>${p.price}</div>
+          <div class="package-period">${p.period}</div>
+        </div>
+        <div class="package-body">
+          <ul class="package-includes">
+            ${(p.includes || []).map(i => '<li>' + i + '</li>').join('')}
+          </ul>
+          <a href="${waUrl}" class="btn-primary" target="_blank" style="width:100%;text-align:center;margin-top:1.5rem;display:block;">Get a Quote on WhatsApp</a>
+        </div>
+      </div>
+    `).join('');
+  }
+
+  // ── Articles / Journal ──
+  const journalEl = document.getElementById('journal-grid');
+  if (journalEl && articles && articles.length) {
+    const artList = Array.isArray(articles) ? articles : (articles.articles || []);
+    journalEl.innerHTML = artList.map(a => `
+      <a href="${a.url || '/blog'}" class="journal-card">
+        <div class="journal-img">${a.image ? '<img src="' + a.image + '" style="width:100%;height:100%;object-fit:cover;" alt="">' : 'Article Image'}</div>
+        <div class="journal-body">
+          <div class="journal-tag">${a.tag}</div>
+          <div class="journal-title display">${a.title}</div>
+          <div class="journal-desc">${a.desc}</div>
+        </div>
+      </a>
+    `).join('');
+  }
+
+  // ── Before/After Results ──
+  const resultsEl = document.getElementById('results-grid');
+  if (resultsEl) {
+    const resList = Array.isArray(results) ? results : (results ? results.results || [] : []);
+    if (!resList.length) {
+      resultsEl.innerHTML = '<div style="grid-column:1/-1;text-align:center;padding:3rem;color:#7a907a;font-size:0.85rem;">Patient results will be added here. <a href="' + waUrl + '" style="color:var(--green)">Ask us for case studies →</a></div>';
+    } else {
+      resultsEl.innerHTML = resList.map(r => `
+        <div class="result-card">
+          <div class="result-images" style="display:grid;grid-template-columns:1fr 1fr;height:200px;position:relative;">
+            ${r.before ? '<img src="' + r.before + '" style="width:100%;height:100%;object-fit:cover;" alt="Before">' : '<div class="result-img-placeholder">Before</div>'}
+            ${r.after ? '<img src="' + r.after + '" style="width:100%;height:100%;object-fit:cover;" alt="After">' : '<div class="result-img-placeholder after">After</div>'}
+            <span class="result-label before">Before</span>
+            <span class="result-label after">${r.months || '12'} Months</span>
+          </div>
+          <div class="result-info">
+            <div class="result-detail">
+              ${r.grafts ? '<strong>Procedure</strong>' + r.grafts + ' grafts' + (r.technique ? ' — ' + r.technique : '') : ''}
+            </div>
+          </div>
+        </div>
+      `).join('');
+    }
+  }
+
+  // ── FAQ ──
+  const faqEl = document.getElementById('faq-grid');
+  if (faqEl && faq && faq.length) {
+    const faqList = Array.isArray(faq) ? faq : (faq.faq || []);
+    faqEl.innerHTML = faqList.map(f => `
+      <div class="faq-item">
+        <div class="faq-q">${f.question} <span>+</span></div>
+        <div class="faq-a">${f.answer}</div>
+      </div>
+    `).join('');
+  }
+}
+
+// ── FAQ TOGGLE ──
+document.addEventListener('click', e => {
+  const item = e.target.closest('.faq-item');
+  if (item) {
+    const a = item.querySelector('.faq-a');
+    const span = item.querySelector('.faq-q span');
+    const open = item.classList.toggle('open');
+    if (a) a.style.display = open ? 'block' : 'none';
+    if (span) span.textContent = open ? '−' : '+';
+  }
+});
+
+init();
+</script>
+
+<script>
+  if (window.netlifyIdentity) {
+    window.netlifyIdentity.on("init", user => {
+      if (!user) {
+        window.netlifyIdentity.on("login", () => {
+          document.location.href = "/admin/";
+        });
+      }
+    });
+  }
+  // If invite/recovery token lands on homepage, redirect to admin
+  if (window.location.hash && (window.location.hash.includes('invite_token') || window.location.hash.includes('recovery_token'))) {
+    window.location.href = '/admin/' + window.location.hash;
+  }
+</script>
+</body>
+</html>

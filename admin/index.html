@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lucera Admin</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --bg: #0f1a0f; --bg2: #172117; --bg3: #1e2b1e;
+  --green: #2d6a4f; --green-mid: #40916c; --green-light: #74c69d;
+  --text: #e8f0e8; --muted: #7a9a7a; --border: rgba(116,198,157,0.12);
+  --danger: #c0392b;
+}
+body { font-family: 'Outfit', sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; }
+#login-screen { min-height:100vh; display:flex; align-items:center; justify-content:center; background:radial-gradient(ellipse at 50% 40%,rgba(45,106,79,0.2) 0%,transparent 60%); }
+.login-box { background:var(--bg2); border:1px solid var(--border); border-radius:12px; padding:3rem; width:100%; max-width:380px; text-align:center; }
+.login-logo { font-family:'Playfair Display',serif; font-size:1.4rem; color:var(--green-light); letter-spacing:0.08em; margin-bottom:0.4rem; }
+.login-sub { font-size:0.75rem; color:var(--muted); letter-spacing:0.1em; text-transform:uppercase; margin-bottom:2rem; }
+.login-box input { width:100%; background:var(--bg3); border:1px solid var(--border); border-radius:6px; padding:0.85rem 1rem; color:var(--text); font-family:'Outfit',sans-serif; font-size:0.9rem; margin-bottom:1rem; outline:none; transition:border-color 0.2s; }
+.login-box input:focus { border-color:var(--green-mid); }
+.login-btn { width:100%; background:var(--green); color:white; border:none; border-radius:6px; padding:0.85rem; font-family:'Outfit',sans-serif; font-size:0.85rem; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; cursor:pointer; transition:background 0.2s; }
+.login-btn:hover { background:var(--green-mid); }
+.login-error { color:#e74c3c; font-size:0.8rem; margin-top:0.75rem; display:none; }
+#app { display:none; min-height:100vh; }
+.layout { display:grid; grid-template-columns:220px 1fr; min-height:100vh; }
+.sidebar { background:var(--bg2); border-right:1px solid var(--border); padding:1.5rem 0; position:sticky; top:0; height:100vh; overflow-y:auto; }
+.sidebar-logo { padding:0 1.5rem 1.5rem; border-bottom:1px solid var(--border); margin-bottom:1rem; }
+.sidebar-logo-text { font-family:'Playfair Display',serif; font-size:1.05rem; color:var(--green-light); }
+.sidebar-logo-sub { font-size:0.65rem; color:var(--muted); text-transform:uppercase; letter-spacing:0.1em; margin-top:0.2rem; }
+.nav-item { display:flex; align-items:center; gap:0.75rem; padding:0.7rem 1.5rem; font-size:0.82rem; color:var(--muted); cursor:pointer; transition:all 0.15s; border-left:2px solid transparent; }
+.nav-item:hover { color:var(--text); background:rgba(116,198,157,0.05); }
+.nav-item.active { color:var(--green-light); border-left-color:var(--green-light); background:rgba(116,198,157,0.08); }
+.sidebar-logout { padding:1rem 1.5rem 0; border-top:1px solid var(--border); margin-top:2rem; }
+.logout-btn { font-size:0.75rem; color:var(--muted); cursor:pointer; background:none; border:none; font-family:'Outfit',sans-serif; padding:0; }
+.logout-btn:hover { color:#e74c3c; }
+.content { padding:2.5rem 3rem; }
+.page-title { font-family:'Playfair Display',serif; font-size:1.6rem; color:var(--text); margin-bottom:0.4rem; }
+.page-sub { font-size:0.8rem; color:var(--muted); margin-bottom:2rem; }
+.toast { position:fixed; bottom:2rem; right:2rem; background:var(--green); color:white; padding:0.85rem 1.5rem; border-radius:8px; font-size:0.85rem; font-weight:500; z-index:999; transform:translateY(100px); opacity:0; transition:all 0.3s; }
+.toast.show { transform:translateY(0); opacity:1; }
+.toast.error { background:var(--danger); }
+.card { background:var(--bg2); border:1px solid var(--border); border-radius:10px; padding:1.75rem; margin-bottom:1.5rem; }
+.card-title { font-size:0.75rem; text-transform:uppercase; letter-spacing:0.12em; color:var(--green-light); margin-bottom:1.25rem; }
+.field { margin-bottom:1.25rem; }
+.field label { display:block; font-size:0.75rem; color:var(--muted); margin-bottom:0.4rem; text-transform:uppercase; letter-spacing:0.08em; }
+.field input,.field textarea { width:100%; background:var(--bg3); border:1px solid var(--border); border-radius:6px; padding:0.7rem 0.9rem; color:var(--text); font-family:'Outfit',sans-serif; font-size:0.88rem; outline:none; transition:border-color 0.2s; }
+.field input:focus,.field textarea:focus { border-color:var(--green-mid); }
+.field textarea { resize:vertical; min-height:80px; }
+.save-btn { background:var(--green); color:white; border:none; border-radius:6px; padding:0.75rem 1.75rem; font-family:'Outfit',sans-serif; font-size:0.82rem; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; cursor:pointer; transition:background 0.2s; }
+.save-btn:hover { background:var(--green-mid); }
+.list-item { background:var(--bg3); border:1px solid var(--border); border-radius:8px; padding:1.25rem; margin-bottom:1rem; }
+.list-item-header { display:flex; align-items:center; justify-content:space-between; margin-bottom:0.75rem; }
+.item-label { font-size:0.8rem; font-weight:600; color:var(--green-light); }
+.delete-btn { background:none; border:1px solid rgba(192,57,43,0.4); color:#e74c3c; border-radius:4px; padding:0.3rem 0.6rem; font-size:0.72rem; cursor:pointer; transition:all 0.15s; }
+.delete-btn:hover { background:rgba(192,57,43,0.15); }
+.add-btn { background:transparent; border:1px dashed var(--border); color:var(--muted); border-radius:6px; padding:0.7rem 1.25rem; font-family:'Outfit',sans-serif; font-size:0.8rem; cursor:pointer; width:100%; transition:all 0.2s; margin-bottom:1.5rem; }
+.add-btn:hover { border-color:var(--green-mid); color:var(--green-light); }
+.includes-list { margin-top:0.5rem; }
+.include-row { display:flex; gap:0.5rem; margin-bottom:0.4rem; }
+.include-row input { flex:1; }
+.include-del { background:none; border:none; color:var(--muted); cursor:pointer; font-size:1rem; padding:0 0.3rem; }
+.include-del:hover { color:#e74c3c; }
+.loading { color:var(--muted); font-size:0.85rem; padding:1rem 0; }
+.two-col { display:grid; grid-template-columns:1fr 1fr; gap:0.75rem; }
+.three-col { display:grid; grid-template-columns:1fr 1fr 1fr; gap:0.75rem; }
+.checkbox-row { display:flex; align-items:center; gap:0.5rem; }
+.checkbox-row input[type=checkbox] { width:auto; accent-color:var(--green-mid); }
+</style>
+</head>
+<body>
+
+<div id="login-screen">
+  <div class="login-box">
+    <div class="login-logo">LUCERA GLOBAL</div>
+    <div class="login-sub">Admin Panel</div>
+    <input type="password" id="pw-input" placeholder="Enter password" onkeydown="if(event.key==='Enter')doLogin()">
+    <button class="login-btn" onclick="doLogin()">Sign In</button>
+    <div class="login-error" id="login-err">Incorrect password. Try again.</div>
+  </div>
+</div>
+
+<div id="app">
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="sidebar-logo">
+        <div class="sidebar-logo-text">LUCERA</div>
+        <div class="sidebar-logo-sub">Admin Panel</div>
+      </div>
+      <nav>
+        <div class="nav-item active" onclick="showPage('settings')" id="nav-settings"><span>⚙️</span> Site Settings</div>
+        <div class="nav-item" onclick="showPage('packages')" id="nav-packages"><span>📦</span> Packages</div>
+        <div class="nav-item" onclick="showPage('articles')" id="nav-articles"><span>📝</span> Articles</div>
+        <div class="nav-item" onclick="showPage('results')" id="nav-results"><span>📷</span> Before/After</div>
+        <div class="nav-item" onclick="showPage('faq')" id="nav-faq"><span>❓</span> FAQ</div>
+      </nav>
+      <div class="sidebar-logout"><button class="logout-btn" onclick="logout()">← Logout</button></div>
+    </aside>
+    <main class="content" id="main-content"><div class="loading">Loading...</div></main>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+let TOKEN = '', pageData = {}, pageSha = {};
+
+function doLogin() {
+  const pw = document.getElementById('pw-input').value;
+  if (!pw) return;
+  TOKEN = pw;
+  loadFile('settings').then(d => {
+    if (d) {
+      document.getElementById('login-screen').style.display = 'none';
+      document.getElementById('app').style.display = 'block';
+      showPage('settings');
+    } else {
+      TOKEN = '';
+      document.getElementById('login-err').style.display = 'block';
+    }
+  });
+}
+
+function logout() {
+  TOKEN = '';
+  document.getElementById('login-screen').style.display = 'flex';
+  document.getElementById('app').style.display = 'none';
+  document.getElementById('pw-input').value = '';
+}
+
+async function loadFile(file) {
+  try {
+    const r = await fetch('/api/load?file=' + file, { headers: { 'Authorization': 'Bearer ' + TOKEN } });
+    if (!r.ok) return null;
+    const d = await r.json();
+    pageData[file] = d.content; pageSha[file] = d.sha;
+    return d.content;
+  } catch { return null; }
+}
+
+async function saveFile(file, content) {
+  try {
+    const r = await fetch('/api/save', {
+      method: 'POST',
+      headers: { 'Authorization': 'Bearer ' + TOKEN, 'Content-Type': 'application/json' },
+      body: JSON.stringify({ file, content, sha: pageSha[file] })
+    });
+    const d = await r.json();
+    if (d.success) { pageSha[file] = d.sha; showToast('Saved ✓'); return true; }
+    showToast('Error: ' + d.error, true); return false;
+  } catch (e) { showToast('Failed: ' + e.message, true); return false; }
+}
+
+function showToast(msg, error=false) {
+  const t = document.getElementById('toast');
+  t.textContent = msg; t.className = 'toast' + (error ? ' error' : '');
+  t.classList.add('show'); setTimeout(() => t.classList.remove('show'), 3000);
+}
+
+function showPage(page) {
+  document.querySelectorAll('.nav-item').forEach(e => e.classList.remove('active'));
+  document.getElementById('nav-' + page).classList.add('active');
+  const c = document.getElementById('main-content');
+  c.innerHTML = '<div class="loading">Loading...</div>';
+  loadFile(page).then(data => {
+    if (!data) { c.innerHTML = '<p style="color:#e74c3c">Failed to load.</p>'; return; }
+    if (page === 'settings') renderSettings(data, c);
+    else if (page === 'packages') renderPackages(data, c);
+    else if (page === 'articles') renderArticles(data, c);
+    else if (page === 'results') renderResults(data, c);
+    else if (page === 'faq') renderFaq(data, c);
+  });
+}
+
+function v(id) { return document.getElementById(id)?.value || ''; }
+function esc(s) { return String(s||'').replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+
+// SETTINGS
+function renderSettings(data, el) {
+  el.innerHTML = `<div class="page-title">Site Settings</div><div class="page-sub">Update contact info and social links</div>
+  <div class="card"><div class="card-title">Contact</div>
+    <div class="field"><label>WhatsApp Number</label><input id="s-wa" value="${esc(data.whatsapp)}"></div>
+    <div class="field"><label>Email</label><input id="s-email" value="${esc(data.email)}"></div>
+  </div>
+  <div class="card"><div class="card-title">Social</div>
+    <div class="field"><label>Instagram URL</label><input id="s-ig" value="${esc(data.instagram)}"></div>
+    <div class="field"><label>TikTok URL</label><input id="s-tt" value="${esc(data.tiktok)}"></div>
+  </div>
+  <div class="card"><div class="card-title">Hero Image</div>
+    <div class="field"><label>Image Path (e.g. /images/uploads/photo.jpg)</label><input id="s-hero" value="${esc(data.hero_image)}"></div>
+  </div>
+  <button class="save-btn" onclick="saveSettings()">Save Settings</button>`;
+}
+async function saveSettings() {
+  await saveFile('settings', { whatsapp:v('s-wa'), email:v('s-email'), instagram:v('s-ig'), tiktok:v('s-tt'), hero_image:v('s-hero') });
+}
+
+// PACKAGES
+function renderPackages(data, el) {
+  pageData['packages'] = Array.isArray(data) ? data : (data.packages||[]);
+  el.innerHTML = `<div class="page-title">Packages</div><div class="page-sub">Manage pricing packages</div>
+  <button class="add-btn" onclick="addPkg()">+ Add Package</button>
+  <div id="pkg-list"></div>
+  <button class="save-btn" onclick="saveFile('packages',pageData.packages).then(ok=>ok&&showToast('Saved ✓'))">Save Packages</button>`;
+  renderPkgList();
+}
+function renderPkgList() {
+  const el = document.getElementById('pkg-list'); if(!el) return;
+  el.innerHTML = pageData.packages.map((p,i) => `<div class="list-item">
+    <div class="list-item-header"><span class="item-label">${esc(p.name||'Package '+(i+1))}</span><button class="delete-btn" onclick="delPkg(${i})">Delete</button></div>
+    <div class="field"><label>Name</label><input oninput="pageData.packages[${i}].name=this.value" value="${esc(p.name)}"></div>
+    <div class="three-col">
+      <div class="field"><label>Currency</label><input oninput="pageData.packages[${i}].currency=this.value" value="${esc(p.currency||'£')}"></div>
+      <div class="field"><label>Price</label><input oninput="pageData.packages[${i}].price=this.value" value="${esc(p.price)}"></div>
+      <div class="field"><label>Period</label><input oninput="pageData.packages[${i}].period=this.value" value="${esc(p.period)}"></div>
+    </div>
+    <div class="field"><label><div class="checkbox-row"><input type="checkbox" onchange="pageData.packages[${i}].featured=this.checked" ${p.featured?'checked':''}> Featured</div></label></div>
+    <div class="field"><label>Includes</label><div class="includes-list">${(p.includes||[]).map((it,j)=>`<div class="include-row"><input oninput="pageData.packages[${i}].includes[${j}]=this.value" value="${esc(it)}"><button class="include-del" onclick="pageData.packages[${i}].includes.splice(${j},1);renderPkgList()">×</button></div>`).join('')}</div>
+    <button class="add-btn" style="margin-top:0.5rem;margin-bottom:0" onclick="pageData.packages[${i}].includes.push('');renderPkgList()">+ Add Item</button></div>
+  </div>`).join('');
+}
+function addPkg() { pageData.packages.push({name:'New Package',currency:'£',price:'',period:'per person · all-inclusive',featured:false,includes:[]}); renderPkgList(); }
+function delPkg(i) { pageData.packages.splice(i,1); renderPkgList(); }
+
+// ARTICLES
+function renderArticles(data, el) {
+  pageData['articles'] = Array.isArray(data) ? data : (data.articles||[]);
+  el.innerHTML = `<div class="page-title">Journal Articles</div><div class="page-sub">Manage article cards</div>
+  <button class="add-btn" onclick="addArt()">+ Add Article</button>
+  <div id="art-list"></div>
+  <button class="save-btn" onclick="saveFile('articles',pageData.articles)">Save Articles</button>`;
+  renderArtList();
+}
+function renderArtList() {
+  const el = document.getElementById('art-list'); if(!el) return;
+  el.innerHTML = pageData.articles.map((a,i) => `<div class="list-item">
+    <div class="list-item-header"><span class="item-label">${esc(a.tag||'Article '+(i+1))}</span><button class="delete-btn" onclick="pageData.articles.splice(${i},1);renderArtList()">Delete</button></div>
+    <div class="two-col">
+      <div class="field"><label>Tag</label><input oninput="pageData.articles[${i}].tag=this.value" value="${esc(a.tag)}"></div>
+      <div class="field"><label>URL</label><input oninput="pageData.articles[${i}].url=this.value" value="${esc(a.url||'/blog')}"></div>
+    </div>
+    <div class="field"><label>Title</label><input oninput="pageData.articles[${i}].title=this.value" value="${esc(a.title)}"></div>
+    <div class="field"><label>Description</label><textarea oninput="pageData.articles[${i}].desc=this.value">${esc(a.desc)}</textarea></div>
+    <div class="field"><label>Image Path</label><input oninput="pageData.articles[${i}].image=this.value" value="${esc(a.image)}"></div>
+  </div>`).join('');
+}
+function addArt() { pageData.articles.push({tag:'',title:'',desc:'',url:'/blog',image:''}); renderArtList(); }
+
+// RESULTS
+function renderResults(data, el) {
+  pageData['results'] = Array.isArray(data) ? data : (data.results||[]);
+  el.innerHTML = `<div class="page-title">Before / After</div><div class="page-sub">Patient transformation photos</div>
+  <button class="add-btn" onclick="addRes()">+ Add Result</button>
+  <div id="res-list"></div>
+  <button class="save-btn" onclick="saveFile('results',pageData.results)">Save Results</button>`;
+  renderResList();
+}
+function renderResList() {
+  const el = document.getElementById('res-list'); if(!el) return;
+  el.innerHTML = pageData.results.map((r,i) => `<div class="list-item">
+    <div class="list-item-header"><span class="item-label">Result ${i+1}</span><button class="delete-btn" onclick="pageData.results.splice(${i},1);renderResList()">Delete</button></div>
+    <div class="two-col">
+      <div class="field"><label>Before Image Path</label><input oninput="pageData.results[${i}].before=this.value" value="${esc(r.before)}"></div>
+      <div class="field"><label>After Image Path</label><input oninput="pageData.results[${i}].after=this.value" value="${esc(r.after)}"></div>
+    </div>
+    <div class="three-col">
+      <div class="field"><label>Grafts</label><input oninput="pageData.results[${i}].grafts=this.value" value="${esc(r.grafts)}"></div>
+      <div class="field"><label>Technique</label><input oninput="pageData.results[${i}].technique=this.value" value="${esc(r.technique)}"></div>
+      <div class="field"><label>Months After</label><input oninput="pageData.results[${i}].months=this.value" value="${esc(r.months||'12')}"></div>
+    </div>
+  </div>`).join('');
+}
+function addRes() { pageData.results.push({before:'',after:'',grafts:'',technique:'',months:'12'}); renderResList(); }
+
+// FAQ
+function renderFaq(data, el) {
+  pageData['faq'] = Array.isArray(data) ? data : (data.faq||[]);
+  el.innerHTML = `<div class="page-title">FAQ</div><div class="page-sub">Frequently asked questions</div>
+  <button class="add-btn" onclick="addFaq()">+ Add Question</button>
+  <div id="faq-list"></div>
+  <button class="save-btn" onclick="saveFile('faq',pageData.faq)">Save FAQ</button>`;
+  renderFaqList();
+}
+function renderFaqList() {
+  const el = document.getElementById('faq-list'); if(!el) return;
+  el.innerHTML = pageData.faq.map((f,i) => `<div class="list-item">
+    <div class="list-item-header"><span class="item-label">Q${i+1}</span><button class="delete-btn" onclick="pageData.faq.splice(${i},1);renderFaqList()">Delete</button></div>
+    <div class="field"><label>Question</label><input oninput="pageData.faq[${i}].question=this.value" value="${esc(f.question)}"></div>
+    <div class="field"><label>Answer</label><textarea oninput="pageData.faq[${i}].answer=this.value">${esc(f.answer)}</textarea></div>
+  </div>`).join('');
+}
+function addFaq() { pageData.faq.push({question:'',answer:''}); renderFaqList(); }
+</script>
+</body>
+</html>

@@ -12,5 +12,12 @@
     "grafts": "2500",
     "technique": "FUE",
     "months": "12"
+  },
+  {
+    "before": "/images/uploads/ss.before.png",
+    "after": "/images/uploads/ss.after.jpeg",
+    "grafts": "2500",
+    "technique": "Sapphire FUE",
+    "months": "12"
   }
 ]

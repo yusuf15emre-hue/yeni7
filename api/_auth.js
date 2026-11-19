@@ -27,5 +27,5 @@ export async function checkAuth(req, res) {
   return false;
 }
 
-export const ALLOWED = ['settings', 'packages', 'articles', 'results', 'faq'];
+export const ALLOWED = ['articles'];
 export const REPO = 'yusuf15emre-hue/yeni7';

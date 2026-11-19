@@ -4,34 +4,37 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Lucera Admin</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="/images/mark.png" type="image/png">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{--bg:#0f1a0f;--bg2:#172117;--bg3:#1e2b1e;--green:#2d6a4f;--green-mid:#40916c;--green-light:#74c69d;--text:#e8f0e8;--muted:#7a9a7a;--border:rgba(116,198,157,0.12);--danger:#c0392b}
-body{font-family:'Outfit',sans-serif;background:var(--bg);color:var(--text);min-height:100vh}
-#login-screen{min-height:100vh;display:flex;align-items:center;justify-content:center;background:radial-gradient(ellipse at 50% 40%,rgba(45,106,79,0.2) 0%,transparent 60%)}
+@font-face{font-family:"Newsreader";src:url("/fonts/newsreader-latin-opsz-normal.woff2") format("woff2");font-weight:200 800;font-display:swap}
+@font-face{font-family:"Public Sans";src:url("/fonts/public-sans-latin-wght-normal.woff2") format("woff2");font-weight:100 900;font-display:swap}
+:root{--bg:#eef3f5;--bg2:#ffffff;--bg3:#fbfcfc;--green:#2b7a83;--green-mid:#1f5f67;--green-light:#1f5f67;--text:#13284f;--muted:#52606f;--border:#d3dde2;--danger:#9a3b2c}
+body{font-family:'Public Sans',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh}
+#login-screen{min-height:100vh;display:flex;align-items:center;justify-content:center;background:var(--bg)}
 .login-box{background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:3rem;width:100%;max-width:380px;text-align:center}
-.login-logo{font-family:'Playfair Display',serif;font-size:1.4rem;color:var(--green-light);letter-spacing:0.08em;margin-bottom:0.4rem}
+.login-logo{font-family:'Newsreader',Georgia,serif;font-size:1.4rem;color:var(--green-light);letter-spacing:0.08em;margin-bottom:0.4rem}
 .login-sub{font-size:0.75rem;color:var(--muted);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:2rem}
-.login-box input{width:100%;background:var(--bg3);border:1px solid var(--border);border-radius:6px;padding:0.85rem 1rem;color:var(--text);font-family:'Outfit',sans-serif;font-size:0.9rem;margin-bottom:1rem;outline:none;transition:border-color 0.2s}
+.login-box input{width:100%;background:var(--bg3);border:1px solid var(--border);border-radius:6px;padding:0.85rem 1rem;color:var(--text);font-family:'Public Sans',system-ui,sans-serif;font-size:0.9rem;margin-bottom:1rem;outline:none;transition:border-color 0.2s}
 .login-box input:focus{border-color:var(--green-mid)}
-.login-btn{width:100%;background:var(--green);color:white;border:none;border-radius:6px;padding:0.85rem;font-family:'Outfit',sans-serif;font-size:0.85rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;cursor:pointer;transition:background 0.2s}
+.login-btn{width:100%;background:var(--green);color:white;border:none;border-radius:6px;padding:0.85rem;font-family:'Public Sans',system-ui,sans-serif;font-size:0.85rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;cursor:pointer;transition:background 0.2s}
 .login-btn:hover{background:var(--green-mid)}
 .login-error{color:#e74c3c;font-size:0.8rem;margin-top:0.75rem;display:none}
 #app{display:none;min-height:100vh}
 .layout{display:grid;grid-template-columns:220px 1fr;min-height:100vh}
 .sidebar{background:var(--bg2);border-right:1px solid var(--border);padding:1.5rem 0;position:sticky;top:0;height:100vh;overflow-y:auto}
 .sidebar-logo{padding:0 1.5rem 1.5rem;border-bottom:1px solid var(--border);margin-bottom:1rem}
-.sidebar-logo-text{font-family:'Playfair Display',serif;font-size:1.05rem;color:var(--green-light)}
+.sidebar-logo-text{font-family:'Newsreader',Georgia,serif;font-size:1.05rem;color:var(--green-light)}
 .sidebar-logo-sub{font-size:0.65rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.1em;margin-top:0.2rem}
 .nav-item{display:flex;align-items:center;gap:0.75rem;padding:0.7rem 1.5rem;font-size:0.82rem;color:var(--muted);cursor:pointer;transition:all 0.15s;border-left:2px solid transparent}
-.nav-item:hover{color:var(--text);background:rgba(116,198,157,0.05)}
-.nav-item.active{color:var(--green-light);border-left-color:var(--green-light);background:rgba(116,198,157,0.08)}
+.nav-item:hover{color:var(--text);background:rgba(43,122,131,0.06)}
+.nav-item.active{color:var(--green-light);border-left-color:var(--green-light);background:rgba(43,122,131,0.1)}
 .sidebar-logout{padding:1rem 1.5rem 0;border-top:1px solid var(--border);margin-top:2rem}
-.logout-btn{font-size:0.75rem;color:var(--muted);cursor:pointer;background:none;border:none;font-family:'Outfit',sans-serif;padding:0}
+.logout-btn{font-size:0.75rem;color:var(--muted);cursor:pointer;background:none;border:none;font-family:'Public Sans',system-ui,sans-serif;padding:0}
 .logout-btn:hover{color:#e74c3c}
 .content{padding:2.5rem 3rem}
-.page-title{font-family:'Playfair Display',serif;font-size:1.6rem;color:var(--text);margin-bottom:0.4rem}
+.page-title{font-family:'Newsreader',Georgia,serif;font-size:1.6rem;color:var(--text);margin-bottom:0.4rem}
 .page-sub{font-size:0.8rem;color:var(--muted);margin-bottom:2rem}
 .toast{position:fixed;bottom:2rem;right:2rem;background:var(--green);color:white;padding:0.85rem 1.5rem;border-radius:8px;font-size:0.85rem;font-weight:500;z-index:999;transform:translateY(100px);opacity:0;transition:all 0.3s}
 .toast.show{transform:translateY(0);opacity:1}
@@ -40,17 +43,17 @@ body{font-family:'Outfit',sans-serif;background:var(--bg);color:var(--text);min-
 .card-title{font-size:0.75rem;text-transform:uppercase;letter-spacing:0.12em;color:var(--green-light);margin-bottom:1.25rem}
 .field{margin-bottom:1.25rem}
 .field label{display:block;font-size:0.75rem;color:var(--muted);margin-bottom:0.4rem;text-transform:uppercase;letter-spacing:0.08em}
-.field input,.field textarea{width:100%;background:var(--bg3);border:1px solid var(--border);border-radius:6px;padding:0.7rem 0.9rem;color:var(--text);font-family:'Outfit',sans-serif;font-size:0.88rem;outline:none;transition:border-color 0.2s}
+.field input,.field textarea{width:100%;background:var(--bg3);border:1px solid var(--border);border-radius:6px;padding:0.7rem 0.9rem;color:var(--text);font-family:'Public Sans',system-ui,sans-serif;font-size:0.88rem;outline:none;transition:border-color 0.2s}
 .field input:focus,.field textarea:focus{border-color:var(--green-mid)}
 .field textarea{resize:vertical;min-height:80px}
-.save-btn{background:var(--green);color:white;border:none;border-radius:6px;padding:0.75rem 1.75rem;font-family:'Outfit',sans-serif;font-size:0.82rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;cursor:pointer;transition:background 0.2s}
+.save-btn{background:var(--green);color:white;border:none;border-radius:6px;padding:0.75rem 1.75rem;font-family:'Public Sans',system-ui,sans-serif;font-size:0.82rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;cursor:pointer;transition:background 0.2s}
 .save-btn:hover{background:var(--green-mid)}
 .list-item{background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:1.25rem;margin-bottom:1rem}
 .list-item-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:0.75rem}
 .item-label{font-size:0.8rem;font-weight:600;color:var(--green-light)}
 .delete-btn{background:none;border:1px solid rgba(192,57,43,0.4);color:#e74c3c;border-radius:4px;padding:0.3rem 0.6rem;font-size:0.72rem;cursor:pointer;transition:all 0.15s}
 .delete-btn:hover{background:rgba(192,57,43,0.15)}
-.add-btn{background:transparent;border:1px dashed var(--border);color:var(--muted);border-radius:6px;padding:0.7rem 1.25rem;font-family:'Outfit',sans-serif;font-size:0.8rem;cursor:pointer;width:100%;transition:all 0.2s;margin-bottom:1.5rem}
+.add-btn{background:transparent;border:1px dashed var(--border);color:var(--muted);border-radius:6px;padding:0.7rem 1.25rem;font-family:'Public Sans',system-ui,sans-serif;font-size:0.8rem;cursor:pointer;width:100%;transition:all 0.2s;margin-bottom:1.5rem}
 .add-btn:hover{border-color:var(--green-mid);color:var(--green-light)}
 .includes-list{margin-top:0.5rem}
 .include-row{display:flex;gap:0.5rem;margin-bottom:0.4rem}
@@ -65,19 +68,19 @@ body{font-family:'Outfit',sans-serif;background:var(--bg);color:var(--text);min-
 
 /* RICH TEXT EDITOR */
 .editor-toolbar{display:flex;flex-wrap:wrap;gap:0.25rem;padding:0.5rem;background:var(--bg);border:1px solid var(--border);border-bottom:none;border-radius:6px 6px 0 0}
-.editor-toolbar button{background:var(--bg2);border:1px solid var(--border);color:var(--text);border-radius:4px;padding:0.3rem 0.6rem;font-size:0.78rem;cursor:pointer;transition:all 0.15s;font-family:'Outfit',sans-serif}
+.editor-toolbar button{background:var(--bg2);border:1px solid var(--border);color:var(--text);border-radius:4px;padding:0.3rem 0.6rem;font-size:0.78rem;cursor:pointer;transition:all 0.15s;font-family:'Public Sans',system-ui,sans-serif}
 .editor-toolbar button:hover{background:var(--green);border-color:var(--green);color:white}
 .editor-toolbar .sep{width:1px;background:var(--border);margin:0 0.15rem}
-.editor-toolbar select{background:var(--bg2);border:1px solid var(--border);color:var(--text);border-radius:4px;padding:0.3rem 0.5rem;font-size:0.78rem;cursor:pointer;font-family:'Outfit',sans-serif;outline:none}
-.rich-editor{width:100%;min-height:300px;background:var(--bg3);border:1px solid var(--border);border-radius:0 0 6px 6px;padding:1rem;color:var(--text);font-family:'Outfit',sans-serif;font-size:0.9rem;line-height:1.7;outline:none}
+.editor-toolbar select{background:var(--bg2);border:1px solid var(--border);color:var(--text);border-radius:4px;padding:0.3rem 0.5rem;font-size:0.78rem;cursor:pointer;font-family:'Public Sans',system-ui,sans-serif;outline:none}
+.rich-editor{width:100%;min-height:300px;background:var(--bg3);border:1px solid var(--border);border-radius:0 0 6px 6px;padding:1rem;color:var(--text);font-family:'Public Sans',system-ui,sans-serif;font-size:0.9rem;line-height:1.7;outline:none}
 .rich-editor:focus{border-color:var(--green-mid)}
-.rich-editor h1,.rich-editor h2,.rich-editor h3{font-family:'Playfair Display',serif;margin:1rem 0 0.5rem;color:var(--green-light)}
+.rich-editor h1,.rich-editor h2,.rich-editor h3{font-family:'Newsreader',Georgia,serif;margin:1rem 0 0.5rem;color:var(--green-light)}
 .rich-editor h1{font-size:1.8rem}
 .rich-editor h2{font-size:1.4rem}
 .rich-editor h3{font-size:1.1rem}
 .rich-editor p{margin-bottom:0.75rem}
 .rich-editor ul,.rich-editor ol{margin:0.5rem 0 0.75rem 1.5rem}
-.rich-editor blockquote{border-left:3px solid var(--green-light);padding:0.75rem 1rem;margin:1rem 0;background:rgba(116,198,157,0.06);border-radius:0 4px 4px 0;font-style:italic}
+.rich-editor blockquote{border-left:3px solid var(--green-light);padding:0.75rem 1rem;margin:1rem 0;background:rgba(43,122,131,0.06);border-radius:0 4px 4px 0;font-style:italic}
 .rich-editor a{color:var(--green-light)}
 .color-btn{width:22px;height:22px;border-radius:3px;border:1px solid var(--border);cursor:pointer;padding:0;flex-shrink:0}
 .preview-link{font-size:0.72rem;color:var(--green-light);text-decoration:none;margin-left:auto;display:flex;align-items:center;gap:0.3rem}
@@ -103,11 +106,8 @@ body{font-family:'Outfit',sans-serif;background:var(--bg);color:var(--text);min-
         <div class="sidebar-logo-sub">Admin Panel</div>
       </div>
       <nav>
-        <div class="nav-item active" onclick="showPage('settings')" id="nav-settings"><span>⚙️</span> Site Settings</div>
-        <div class="nav-item" onclick="showPage('packages')" id="nav-packages"><span>📦</span> Packages</div>
-        <div class="nav-item" onclick="showPage('articles')" id="nav-articles"><span>📝</span> Articles</div>
-        <div class="nav-item" onclick="showPage('results')" id="nav-results"><span>📷</span> Before/After</div>
-        <div class="nav-item" onclick="showPage('faq')" id="nav-faq"><span>❓</span> FAQ</div>
+        <div class="nav-item active" onclick="showPage('articles')" id="nav-articles">Guides (blog)</div>
+        <p style="padding:1rem 1.5rem;font-size:.75rem;color:var(--muted);line-height:1.5">Home page, prices and FAQ are edited in code. Ask Claude to change them.</p>
       </nav>
       <div class="sidebar-logout"><button class="logout-btn" onclick="logout()">← Logout</button></div>
     </aside>
@@ -123,8 +123,8 @@ let TOKEN='', pageData={}, pageSha={}, lastStatus=0;
 function doLogin(){
   const pw=document.getElementById('pw-input').value; if(!pw) return;
   TOKEN=pw;
-  loadFile('settings').then(d=>{
-    if(d){document.getElementById('login-screen').style.display='none';document.getElementById('app').style.display='block';showPage('settings');}
+  loadFile('articles').then(d=>{
+    if(d){document.getElementById('login-screen').style.display='none';document.getElementById('app').style.display='block';showPage('articles');}
     else{TOKEN='';const e=document.getElementById('login-err');e.textContent=lastStatus===503?'Admin is switched off: set an ADMIN_PASSWORD of at least 16 characters in Vercel.':lastStatus===429?'Too many attempts. Try again in 15 minutes.':'Wrong password.';e.style.display='block';}
   });
 }
@@ -223,7 +223,7 @@ function richEditorHTML(idx, content){
     <button onclick="fmt('removeFormat')" title="Clear formatting">✕ Clear</button>
     <div class="sep"></div>
     <span style="font-size:0.72rem;color:var(--muted);align-self:center">Color:</span>
-    ${['#e8f0e8','#74c69d','#b5884a','#e74c3c','#3498db','#f39c12'].map(c=>`<button class="color-btn" style="background:${c}" onclick="fmt('foreColor','${c}')" title="${c}"></button>`).join('')}
+    ${['#13284f','#2b7a83','#52606f'].map(c=>`<button class="color-btn" style="background:${c}" onclick="fmt('foreColor','${c}')" title="${c}"></button>`).join('')}
     <div class="sep"></div>
     <a href="/blog/${idx === 'preview' ? '' : ''}" target="_blank" class="preview-link" id="preview-link-${idx}">👁 Preview</a>
   </div>
@@ -246,7 +246,7 @@ function syncEditor(idx){
 
 function renderArticles(data,el){
   pageData['articles']=Array.isArray(data)?data:(data.articles||[]);
-  el.innerHTML=`<div class="page-title">Journal Articles</div><div class="page-sub">Write and manage blog articles</div>
+  el.innerHTML=`<div class="page-title">Guides</div><div class="page-sub">Write and edit the guides shown at /blog. Saving publishes in about a minute.</div>
   <button class="add-btn" onclick="addArt()">+ Add Article</button>
   <div id="art-list"></div>
   <button class="save-btn" onclick="collectAndSaveArticles()">Save Articles</button>`;

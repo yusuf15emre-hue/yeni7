@@ -1,8 +1,8 @@
 [
   {
     "name": "Essential",
-    "currency": "£",
-    "price": "2,500",
+    "currency": "€",
+    "price": "2,900",
     "period": "per person · written quote after photo review",
     "featured": false,
     "includes": [
@@ -16,8 +16,8 @@
   },
   {
     "name": "Premium VIP",
-    "currency": "£",
-    "price": "3,500",
+    "currency": "€",
+    "price": "4,000",
     "period": "per person · written quote after photo review",
     "featured": true,
     "includes": [

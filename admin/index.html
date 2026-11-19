@@ -195,7 +195,7 @@ function renderPkgList(){
     <button class="add-btn" style="margin-top:0.5rem;margin-bottom:0" onclick="pageData.packages[${i}].includes.push('');renderPkgList()">+ Add Item</button></div>
   </div>`).join('');
 }
-function addPkg(){pageData.packages.push({name:'New Package',currency:'£',price:'',period:'per person · all-inclusive',featured:false,includes:[]});renderPkgList();}
+function addPkg(){pageData.packages.push({name:'New Package',currency:'€',price:'',period:'per person · all-inclusive',featured:false,includes:[]});renderPkgList();}
 
 // ARTICLES
 function slugify(str){return str.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');}

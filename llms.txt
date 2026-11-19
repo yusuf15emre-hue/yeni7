@@ -1,6 +1,6 @@
 # Lucera Global
 
-> Lucera Global is a patient-referral agency that helps international patients choose a licensed, doctor-led hair transplant clinic in Istanbul, Turkey. We review photos, give a free graft estimate, explain what a package includes and support patients on WhatsApp before, during and after their trip. The procedure is performed by our partner clinic; clinics pay us a referral fee.
+> Lucera Global is a patient-referral agency that helps international patients choose a licensed, doctor-led hair transplant clinic in Istanbul, Turkey. We review photos, give a free graft estimate, explain what a package includes and support patients on WhatsApp before, during and after their trip. The procedure is performed by our partner clinic; clinics pay us a referral fee, and patients pay the same price as booking with the clinic directly.
 
 Key facts:
 - Service: free photo review and graft estimate (front, top and crown photos), clinic matching, written quote, ongoing WhatsApp support.
@@ -12,6 +12,7 @@ Key facts:
 
 ## Main pages
 - [Home](https://luceraglobal.com/): how Lucera Global works and how to get a free estimate
+- [Arabic home page](https://luceraglobal.com/ar/) and [Arabic FAQ](https://luceraglobal.com/ar/faq)
 - [FAQ](https://luceraglobal.com/faq): cost, who performs the surgery, grafts, FUE vs DHI, pain, length of stay, recovery, shedding, safety, questions to ask a clinic
 
 ## Guides

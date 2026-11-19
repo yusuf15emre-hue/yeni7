@@ -1,6 +1,14 @@
 {
   "rewrites": [
     {
+      "source": "/ar/faq",
+      "destination": "/ar/faq.html"
+    },
+    {
+      "source": "/ar",
+      "destination": "/ar/index.html"
+    },
+    {
       "source": "/privacy",
       "destination": "/privacy.html"
     },

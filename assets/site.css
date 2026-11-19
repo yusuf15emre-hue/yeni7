@@ -172,3 +172,15 @@ section+section{border-top:1px solid var(--line)}
 .guide-body li{margin-bottom:.4rem}
 .guide-body img{border-radius:8px;margin:1.5rem 0}
 .guide-body blockquote{margin:1.5rem 0;padding-left:1.2rem;border-left:3px solid var(--teal);color:var(--muted)}
+
+/* candidacy + recovery */
+.plain-list{list-style:none;margin:0;padding:0}
+.plain-list li{padding:1rem 0;border-top:1px solid var(--line);color:var(--muted)}
+.plain-list li strong{display:block;color:var(--ink);font-family:var(--serif);font-weight:500;font-size:1.2rem;font-variation-settings:"opsz" 24;margin-bottom:.25rem}
+.timeline{list-style:none;margin:2.5rem 0 0;padding:0;display:grid;grid-template-columns:repeat(6,1fr);gap:0;border-top:3px solid var(--teal)}
+.timeline li{padding:1rem 1rem 0 0;position:relative}
+.timeline li::before{content:"";position:absolute;top:-9px;left:0;width:15px;height:15px;border-radius:50%;background:var(--paper);border:3px solid var(--teal)}
+.timeline span{display:block;font-family:var(--serif);font-size:1.25rem;font-variation-settings:"opsz" 24;margin:.6rem 0 .3rem}
+.timeline p{font-size:.95rem;color:var(--muted)}
+@media(max-width:900px){.timeline{grid-template-columns:1fr;border-top:0;border-left:3px solid var(--teal);margin-left:.5rem}
+  .timeline li{padding:0 0 1.2rem 1.5rem}.timeline li::before{top:.35rem;left:-9px}.timeline span{margin-top:0}}

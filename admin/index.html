@@ -118,19 +118,19 @@ body{font-family:'Outfit',sans-serif;background:var(--bg);color:var(--text);min-
 <div class="toast" id="toast"></div>
 
 <script>
-let TOKEN='', pageData={}, pageSha={};
+let TOKEN='', pageData={}, pageSha={}, lastStatus=0;
 
 function doLogin(){
   const pw=document.getElementById('pw-input').value; if(!pw) return;
   TOKEN=pw;
   loadFile('settings').then(d=>{
     if(d){document.getElementById('login-screen').style.display='none';document.getElementById('app').style.display='block';showPage('settings');}
-    else{TOKEN='';document.getElementById('login-err').style.display='block';}
+    else{TOKEN='';const e=document.getElementById('login-err');e.textContent=lastStatus===503?'Admin is switched off: set an ADMIN_PASSWORD of at least 16 characters in Vercel.':lastStatus===429?'Too many attempts. Try again in 15 minutes.':'Wrong password.';e.style.display='block';}
   });
 }
 function logout(){TOKEN='';document.getElementById('login-screen').style.display='flex';document.getElementById('app').style.display='none';document.getElementById('pw-input').value='';}
 async function loadFile(file){
-  try{const r=await fetch('/api/load?file='+file,{headers:{'Authorization':'Bearer '+TOKEN}});if(!r.ok)return null;const d=await r.json();pageData[file]=d.content;pageSha[file]=d.sha;return d.content;}catch{return null;}
+  try{const r=await fetch('/api/load?file='+file,{headers:{'Authorization':'Bearer '+TOKEN}});lastStatus=r.status;if(!r.ok)return null;const d=await r.json();pageData[file]=d.content;pageSha[file]=d.sha;return d.content;}catch{return null;}
 }
 async function saveFile(file,content){
   try{const r=await fetch('/api/save',{method:'POST',headers:{'Authorization':'Bearer '+TOKEN,'Content-Type':'application/json'},body:JSON.stringify({file,content,sha:pageSha[file]})});const d=await r.json();if(d.success){pageSha[file]=d.sha;showToast('Saved ✓');return true;}showToast('Error: '+d.error,true);return false;}catch(e){showToast('Failed: '+e.message,true);return false;}

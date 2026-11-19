@@ -3,4 +3,4 @@ Allow: /
 Disallow: /admin
 Disallow: /api/
 
-Sitemap: https://luceraglobal.com/sitemap.xml
+Sitemap: https://www.luceraglobal.com/sitemap.xml
